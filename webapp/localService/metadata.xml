@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZD2F_HANDLE_CUSTOM_DIF_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ZF4RegionID" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="regionId"/>
+                </Key>
+                <Property Name="regionId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Region ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="description" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZF4filialNummer" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="storeIdAhead"/>
+                    <PropertyRef Name="regionId"/>
+                </Key>
+                <Property Name="storeIdAhead" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="regionId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="regionIdLegacy" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="regionName" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="storeIdLegacy" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="storeFullAddress" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZmainRecords" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="regionId"/>
+                    <PropertyRef Name="storeIdAhead"/>
+                    <PropertyRef Name="diffId"/>
+                    <PropertyRef Name="counter"/>
+                </Key>
+                <Property Name="regionId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Region ID" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="storeIdAhead" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Store ID" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="diffId" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Diff Id" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="counter" Type="Edm.Int16" Nullable="false" sap:unicode="false" sap:label="Counter" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="event" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Event ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="eventDiscp" Type="Edm.String" sap:unicode="false" sap:label="Event" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="effectType" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Effect Type ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="effectTypeDiscp" Type="Edm.String" sap:unicode="false" sap:label="Effect Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="startDate" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Start Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="endDate" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="End Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="numOfDays" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:label="Number of Days" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="entityNumber" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Entity Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="entityNumberDiscp" Type="Edm.String" sap:unicode="false" sap:label="Entity Number Discp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="articleDiscp" Type="Edm.String" sap:unicode="false" sap:label="Article Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="comments" Type="Edm.String" sap:unicode="false" sap:label="Comments" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="createdOn" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Created On" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="effectExtent" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:label="Effect Extent" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="effectExtentDIscp" Type="Edm.String" sap:unicode="false" sap:label="Effect Extent Discp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="delIndicator" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Deletion Indicator" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="splitIndicator" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Split Indicator" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="delArticleIndicator" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Deletion Article Indicator" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ExtProdId" Type="Edm.String" sap:unicode="false" sap:label="External Product ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="articleDiscpMaiinView" Type="Edm.String" sap:unicode="false" sap:label="Article Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZF4Event" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="event"/>
+                    <PropertyRef Name="regionId"/>
+                    <PropertyRef Name="storeIdAhead"/>
+                    <PropertyRef Name="diffId"/>
+                </Key>
+                <Property Name="event" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Event ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="eventDiscp" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Event" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="regionId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Region ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="storeIdAhead" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Store ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="diffId" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Diff Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Z4ExpectedEffect" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="event"/>
+                    <PropertyRef Name="effectType"/>
+                </Key>
+                <Property Name="event" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Event ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="effectType" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Effect Type ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="effectTypeDiscp" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Effect Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Z4EffectExtent" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="effectType"/>
+                    <PropertyRef Name="effectExtentID"/>
+                </Key>
+                <Property Name="effectType" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="effectType" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="effectExtentID" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Effect Extent ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="effectExtent" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:label="Effect Extent" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Z4EntityNumber" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="EntityNumID"/>
+                    <PropertyRef Name="diffId"/>
+                </Key>
+                <Property Name="EntityNumID" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Entity Number Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EntityNumDiscp" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Entiy Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="diffId" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Diff Id" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="ZEventLongText" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LongText"/>
+                    <PropertyRef Name="regionId"/>
+                    <PropertyRef Name="storeIdAhead"/>
+                    <PropertyRef Name="diffId"/>
+                </Key>
+                <Property Name="LongText" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LongText" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="regionId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Region ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="storeIdAhead" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Store ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="diffId" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Diff Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Z4ArticleSearch" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="regionId"/>
+                    <PropertyRef Name="storeIdAhead"/>
+                    <PropertyRef Name="diffId"/>
+                    <PropertyRef Name="entityNumber"/>
+                    <PropertyRef Name="articleDiscp"/>
+                    <PropertyRef Name="ProductID"/>
+                    <PropertyRef Name="ExtProdId"/>
+                    <PropertyRef Name="nodeId"/>
+                    <PropertyRef Name="extNodeId"/>
+                    <PropertyRef Name="counter"/>
+                </Key>
+                <Property Name="regionId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Region ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="storeIdAhead" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Store ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="diffId" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Diff Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="entityNumber" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Entity Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="entityNumberDiscp" Type="Edm.String" sap:unicode="false" sap:label="Entity Number Discp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="articleDiscp" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Article Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProductID" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Product ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ExtProdId" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="External Product ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="nodeId" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Node ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="extNodeId" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="External Node Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="counter" Type="Edm.Int16" Nullable="false" sap:unicode="false" sap:label="Counter" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZHeader" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="regionId"/>
+                    <PropertyRef Name="storeIdAhead"/>
+                    <PropertyRef Name="diffId"/>
+                    <PropertyRef Name="mode"/>
+                </Key>
+                <Property Name="regionId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Region ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="storeIdAhead" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Store ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="diffId" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Diff Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="mode" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="mode" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="navToArticle" Relationship="ZD2F_HANDLE_CUSTOM_DIF_SRV.navToArticle" FromRole="FromRole_navToArticle" ToRole="ToRole_navToArticle"/>
+            </EntityType>
+            <EntityType Name="ZAttachTrainMaterial" m:HasStream="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Filename"/>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="Filename" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Filename" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ID" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mimetype" Type="Edm.String" sap:unicode="false" sap:label="Mimetype" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="navToArticle" sap:content-version="1">
+                <End Type="ZD2F_HANDLE_CUSTOM_DIF_SRV.ZHeader" Multiplicity="*" Role="FromRole_navToArticle"/>
+                <End Type="ZD2F_HANDLE_CUSTOM_DIF_SRV.Z4ArticleSearch" Multiplicity="*" Role="ToRole_navToArticle"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_navToArticle">
+                        <PropertyRef Name="regionId"/>
+                        <PropertyRef Name="storeIdAhead"/>
+                        <PropertyRef Name="diffId"/>
+                    </Principal>
+                    <Dependent Role="ToRole_navToArticle">
+                        <PropertyRef Name="regionId"/>
+                        <PropertyRef Name="storeIdAhead"/>
+                        <PropertyRef Name="diffId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZD2F_HANDLE_CUSTOM_DIF_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZF4RegionIDSet" EntityType="ZD2F_HANDLE_CUSTOM_DIF_SRV.ZF4RegionID" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZF4filialNummerSet" EntityType="ZD2F_HANDLE_CUSTOM_DIF_SRV.ZF4filialNummer" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZmainRecordsSet" EntityType="ZD2F_HANDLE_CUSTOM_DIF_SRV.ZmainRecords" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZF4EventSet" EntityType="ZD2F_HANDLE_CUSTOM_DIF_SRV.ZF4Event" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="Z4ExpectedEffectSet" EntityType="ZD2F_HANDLE_CUSTOM_DIF_SRV.Z4ExpectedEffect" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="Z4EffectExtentSet" EntityType="ZD2F_HANDLE_CUSTOM_DIF_SRV.Z4EffectExtent" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="Z4EntityNumberSet" EntityType="ZD2F_HANDLE_CUSTOM_DIF_SRV.Z4EntityNumber" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZEventLongTextSet" EntityType="ZD2F_HANDLE_CUSTOM_DIF_SRV.ZEventLongText" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="Z4ArticleSearchSet" EntityType="ZD2F_HANDLE_CUSTOM_DIF_SRV.Z4ArticleSearch" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZHeaderSet" EntityType="ZD2F_HANDLE_CUSTOM_DIF_SRV.ZHeader" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZAttachTrainMaterialSet" EntityType="ZD2F_HANDLE_CUSTOM_DIF_SRV.ZAttachTrainMaterial" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <AssociationSet Name="navToArticleSet" Association="ZD2F_HANDLE_CUSTOM_DIF_SRV.navToArticle" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZHeaderSet" Role="FromRole_navToArticle"/>
+                    <End EntitySet="Z4ArticleSearchSet" Role="ToRole_navToArticle"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotations Target="ZD2F_HANDLE_CUSTOM_DIF_SRV.ZmainRecords/regionId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="ZF4RegionIDSet"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="regionId"/>
+                                    <PropertyValue Property="ValueListProperty" String="regionId"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="description"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZD2F_HANDLE_CUSTOM_DIF_SRV.ZmainRecords/storeIdAhead" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="ZF4filialNummerSet"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="storeIdAhead"/>
+                                    <PropertyValue Property="ValueListProperty" String="storeIdAhead"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="regionIdAhead"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="regionName"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="storeFullAddress"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="regionId"/>
+                                    <PropertyValue Property="ValueListProperty" String="regionId"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="https://fr20lscarf01.aldi-pr1.com:44300/sap/opu/odata/sap/ZD2F_HANDLE_CUSTOM_DIF_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://fr20lscarf01.aldi-pr1.com:44300/sap/opu/odata/sap/ZD2F_HANDLE_CUSTOM_DIF_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,21 @@
+<mvc:View
+    controllerName="ar.com.zrtdemopdfviewer.controller.main"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <Toolbar>
+                <Button
+                    text="Show PDF Viewer"
+                    icon="sap-icon://process"
+                    press=".onshowPDF"
+                />
+            </Toolbar>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: ar.com.zrtdemopdfviewer
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        ignoreCertError: true # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
+        target:
+          url: https://fr20lscarf01.aldi-pr1.com:44300
+          client: "100"
+        app:
+          name: ZRTDEMO01
+          description: PDF VIEWER
+          package: $TMP
+          transport: ""
+        exclude:
+          - /test/
